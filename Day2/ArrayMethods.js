@@ -39,6 +39,16 @@ for(let fruit of fruits){
 
 console.log(map);
 
+// reduce method for returning the array  
+
+let fruitsCount = fruits.reduce((acc,curr) => {
+    acc.push([curr,curr.length])
+    return acc
+},[])
+console.log(fruitsCount);
+
+
+
 // From [1,2,3,4,5,6], extract numbers from index 2 to 4.  
 // Copy the last 3 elements of an array without modifying the original.
 

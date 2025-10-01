@@ -79,6 +79,13 @@ for(let key in student){
     
 }
 
+Object.values(student)
+
+for(let [key,values] of Object.entries(student)){
+    console.log(key,values);
+    
+}
+
 
 // ### **4. Using `this` in Object Methods**
 
@@ -259,3 +266,5 @@ const name1 = "Full Name"
 const experience = "experience in work"
 const player = { [name1]: "Jhon", [experience]: 5 };
 console.log(player["Full Name"], player["experience in work"]); 
+// ---
+// ---

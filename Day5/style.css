@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.counter-container, .timer-container {
+    margin-bottom: 20px;
+}
+
+#count, #timer {
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#outer-box {
+    width: 200px;
+    height: 200px;
+    background-color: lightcoral;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#inner-box {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    margin-top: 10px;
+}
+
+#toggle-text {
+    font-size: 16px;
+    margin-top: 10px;
+}

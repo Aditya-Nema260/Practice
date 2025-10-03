@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Interaction Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Counter</h1>
+    <div class="counter-container">
+        <button id="dec">-</button>
+        <span id="count">0</span>
+        <button id="inc">+</button>
+    </div>
+
+    <h2>Timer</h2>
+    <div class="timer-container">
+        <span id="timer">0</span>
+        <div>
+            <button id="timerStart">Start Timer</button>
+            <button id="timerRemove">Stop & Remove Listener</button>
+        </div>
+    </div>
+
+    <h2>List Items (Event Delegation)</h2>
+    <ul id="parent-list">
+        <li class="list">Item 1</li>
+        <li class="list">Item 2</li>
+        <li class="list">Item 3</li>
+    </ul>
+
+    <h2>Form</h2>
+    <form id="myForm">
+        <input type="text" placeholder="Enter something">
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Event Bubbling</h2>
+    <div id="outer-box">
+        Outer Box
+        <div id="inner-box">Inner Box</div>
+    </div>
+
+    <h2>Toggle Visibility</h2>
+    <button id="toggle-btn">Toggle Text</button>
+    <p id="toggle-text">You can hide or show me!</p>
+
+    <script src="index.js"></script>
+</body>
+</html>

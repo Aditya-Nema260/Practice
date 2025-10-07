@@ -268,3 +268,15 @@ const player = { [name1]: "Jhon", [experience]: 5 };
 console.log(player["Full Name"], player["experience in work"]); 
 // ---
 // ---
+
+
+
+
+let obj = {
+    name2: "anuja ji",
+    address:"indore"
+}
+
+let {name2} = obj
+console.log(name2);
+obj.name

@@ -93,3 +93,68 @@ let intervalID = setInterval(() => {
     clearInterval(intervalID);
   }
 }, 1000);
+
+// ### **5. Stopwatch**
+
+// * Add three buttons: **Start, Stop, Reset**.
+// * Display a timer (`00:00:00` format).
+// * Functionality:
+
+//   * **Start** → begins counting every second.
+//   * **Stop** → pauses the timer.
+//   * **Reset** → sets time back to `00:00:00`.
+
+let milliseconds = 0;
+let seconds = 0;
+let minutes = 0;
+let interval;
+
+function format2(n) {
+  return (n < 10 ? "0" : "") + n;
+}
+
+function format3(n) {
+  if (n < 10) return "00" + n;
+  if (n < 100) return "0" + n;
+  return "" + n;
+}
+
+function updateDisplay() {
+  const timeString =
+    format2(minutes) + ":" + format2(seconds) + ":" + format3(milliseconds);
+  document.getElementById("timer").textContent = timeString;
+}
+
+function startTimer() {
+  if (!interval) {
+    interval = setInterval(() => {
+      milliseconds += 10;
+
+      if (milliseconds >= 1000) {
+        milliseconds = 0;
+        seconds += 1;
+      }
+
+      if (seconds >= 60) {
+        seconds = 0;
+        minutes += 1;
+      }
+
+      updateDisplay();
+    }, 10);
+  }
+}
+
+function stopTimer() {
+  clearInterval(interval);
+  interval = null;
+}
+
+function resetTimer() {
+  clearInterval(interval);
+  interval = null;
+  milliseconds = 0;
+  seconds = 0;
+  minutes = 0;
+  updateDisplay();
+}

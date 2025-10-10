@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="nameInput" placeholder="Name" />
+    <input type="text" id = "priceInput" placeholder="Price" />
+    <button id="btn" >Add Product</button>
+    <br />
+
+    <table>
+      <th>
+        <tr>
+          Name
+        </tr>
+        <tr>
+          Price
+        </tr>
+      </th>
+      <tr id = "items">
+
+        <tr id="parent">
+            <td id="name" >burger</td>
+            <td id = "price">4000</td>
+            <td><button class="button" >delete</button></td>
+        </tr>
+      </tr>
+
+    </table>
+
+    <script>
+    
+        let arr = []
+        let name = document.getElementById("name")
+        let price = document.getElementById("price")
+        let btn = document.getElementById("btn")
+        let nameInput =  document.getElementById("nameInput")
+        let priceInput =  document.getElementById("priceInput")
+        let items = document.getElementById("items")
+        let parent = document.getElementById("parent")
+
+        btn.addEventListener("click",  (e) => {
+
+            arr = []
+            arr.push({
+                name : nameInput.value,
+                price: priceInput.value
+            })
+            
+            arr.forEach(obj => {
+            let tr = document.createElement("tr")
+            let nameFor  = document.createElement("td")
+            let priceFor  = document.createElement("td")
+            let button  = document.createElement("button")
+            nameFor.textContent = obj.name
+            priceFor.textContent = obj.price 
+            tr.append(nameFor)
+            tr.append(priceFor)
+            tr.append(button)
+            items.append(tr)
+        })
+            
+        })
+
+
+        button.addEventListener("click", () => {
+
+            arr.splice(index,1,0)
+
+
+    
+        })
+
+
+              // ### 1️⃣ DOM + Events + Objects (20 Marks)
+
+      // Build a small webpage that:
+
+      // * Has an input field for product name and price.
+      // * On clicking “Add Product”, add the data into a table below with two columns (Name & Price).
+      // * Each row should have a “Delete” button to remove that entry.
+      // * Maintain the data in an array and re-render when updated.
+
+      // **Marking Scheme:**
+
+      // * DOM selection & event binding → 5
+      // * Add row & delete row functionality → 10
+      // * Array data handling → 5
+
+
+
+
+    
+    </script>
+  </body>
+</html>

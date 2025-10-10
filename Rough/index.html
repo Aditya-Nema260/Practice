@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Product</title>
+</head>
+<body>
+  <h1>Add a Product</h1>
+  
+  <form id="productForm">
+    <label>
+      Title:
+      <input type="text" id="title" name="title" required>
+    </label>
+    <br><br>
+    
+    <label>
+      Description:
+      <input type="text" id="description" name="description">
+    </label>
+    <br><br>
+
+    <label>
+      Price:
+      <input type="number" id="price" name="price">
+    </label>
+    <br><br>
+
+    <button type="submit">Add Product</button>
+  </form>
+
+  <pre id="response"></pre>
+
+  <script>
+    document.getElementById('productForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const title = document.getElementById('title').value;
+      const description = document.getElementById('description').value;
+      const price = document.getElementById('price').value;
+
+      fetch('https://dummyjson.com/products/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title,
+          description,
+          price: parseFloat(price)
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('response').textContent = JSON.stringify(data, null, 2);
+      })
+      .catch(err => {
+        document.getElementById('response').textContent = 'Error: ' + err;
+      });
+    });
+  </script>
+</body>
+</html>
